@@ -36,7 +36,7 @@ const UserPane = ({ selectedUser, setSelectedUser }) => {
           </button>
         </div>
 
-        {/* Personal Information Section */}
+        
         <div className="mt-4 bg-light-blue-100 py-2 px-4">
           <h4 className="text-black font-semibold">Personal Information</h4>
         </div>
