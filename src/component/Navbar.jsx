@@ -9,15 +9,15 @@ const Navbar = () => {
         <div className="flex items-center space-x-4">
           <CiBellOn className="text-lg" />
           <img
-            src={image} // Use the imported image variable here
+            src={image} 
             alt="Jan Doe"
-            className="w-10 h-10 rounded-full border border-gray-300" // Adjust size as needed
+            className="w-10 h-10 rounded-full border border-gray-300" 
           />
           <h6 className="text-sm font-medium">Jan Doe</h6>
         </div>
       </div>
       <hr className="border-gray-300" />{" "}
-      {/* Add horizontal rule with Tailwind styling */}
+  
     </div>
   );
 };
