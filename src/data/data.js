@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-// Generate fake data
+
 export const generateUser = () => {
   return {
     dob: faker.date.past({ years: 10 }).toLocaleDateString(),
@@ -12,23 +12,21 @@ export const generateUser = () => {
     research: faker.lorem.sentence(),
     publications: faker.lorem.sentence(),
     id: faker.string.uuid(),
-    image: faker.image.avatar(), // Generates a random avatar image URL
-    name: faker.person.fullName(), // Generates a random name
-    status: faker.helpers.arrayElement(["Active", "Inactive", "Pending"]), // Randomly selects a status
+    image: faker.image.avatar(), 
+    name: faker.person.fullName(), 
+    status: faker.helpers.arrayElement(["Active", "Inactive", "Pending"]),
     role: faker.helpers.arrayElement([
       "Product Manager",
       "Product Designer",
       "Frontend Developer",
       "Backend Developer",
-    ]), // Randomly selects a role
-    email: faker.internet.email(), // Generates a random email address
+    ]), 
+    email: faker.internet.email(), 
     teams: faker.helpers.arrayElements(
       ["Design", "Product", "Marketing", "Tehnology"],
       2
-    ), // Selects random teams (2 in this case)
+    ), 
   };
 };
 
-// Generate and log the data
-const user = generateUser();
-console.log(user);
+
