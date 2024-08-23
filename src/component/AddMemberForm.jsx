@@ -3,14 +3,13 @@ import { z, ZodSchema } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 
-// Define the validation schema using zod
 const schema = z.object({
   name: z.string().nonempty("Name is required"),
   status: z.string().nonempty("Status is required"),
   role: z.string().nonempty("Role is required"),
   email: z.string().email("Invalid email"),
   teams: z.array(z.string()).min(1, "At least one team is required"),
-  image: z.string().optional(), // Optional field for image URL
+  image: z.string().optional(), 
 });
 
 const AddMemberForm = ({ onAdd, onClose }) => {
@@ -40,14 +39,14 @@ const AddMemberForm = ({ onAdd, onClose }) => {
       const reader = new FileReader();
       reader.onloadend = () => {
         data.image = reader.result;
-        onAdd(data); // Pass the data to the parent component
+        onAdd(data); 
       };
       reader.readAsDataURL(imageFile);
     } else {
       data.image = image;
-      onAdd(data); // Pass the data to the parent component
+      onAdd(data); 
     }
-    onClose(); // Close the form after submission
+    onClose();
   };
 
   const handleImageUpload = (event) => {
@@ -65,7 +64,7 @@ const AddMemberForm = ({ onAdd, onClose }) => {
   const handleRemoveImage = () => {
     setImage("");
     setImageFile(null);
-    setValue("image", ""); // Clear image value in the form
+    setValue("image", ""); 
   };
 
   return (
@@ -77,7 +76,7 @@ const AddMemberForm = ({ onAdd, onClose }) => {
         <h2 className="text-lg font-bold mb-4">Add Member</h2>
         <div className="mb-4 text-center">
           <img
-            src={image || "default-image-url"} // Replace with default image URL if needed
+            src={image || "default-image-url"} 
             alt="User"
             className="w-24 h-24 rounded-full mx-auto mb-2"
           />
